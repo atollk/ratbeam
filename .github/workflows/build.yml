@@ -15,22 +15,5 @@ jobs:
       - run: rustup update stable && rustup default stable
       - run: cargo build --verbose
       - run: cargo test --verbose
-
-  build_and_test_demo:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: cd examples/demo
-      - run: rustup update stable && rustup default stable
-      - run: cargo build --verbose
-      - run: cargo test --verbose
-
-  build_and_test_wave_interference:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: cd examples/wave-interference
-      - run: rustup update stable && rustup default stable
-      - run: cargo build --verbose
-      - run: cargo test --verbose
-
+      - run: cargo build -p "demo" --verbose
+      - run: cargo build -p "wave-interference" --verbose
